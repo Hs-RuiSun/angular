@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Heroes List</title>
+</head>
+<body>
+<div>
+	<ul>
+		<li *ngFor="let hero of heroes">
+			<a routerLink='{{hero.id}}'>{{hero.name}}</a>
+		</li>
+	</ul>
+</div>
+</body>
+</html>
