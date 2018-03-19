@@ -13,7 +13,6 @@ import { InMemoryDataService } from './in-memory-data.service';
 import { HttpModule } from '@angular/http';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
