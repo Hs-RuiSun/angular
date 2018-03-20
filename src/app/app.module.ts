@@ -24,7 +24,7 @@ import { HttpModule } from '@angular/http';
     AppRoutingModule,
     HttpModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {passThruUnknownUrl: true, apiBase: 'api/'})
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {dataEncapsulation: false, passThruUnknownUrl: false, apiBase: 'api/'})
   ],
   providers: [HeroService, ConfigService, InMemoryDataService],
   bootstrap: [AppComponent]
