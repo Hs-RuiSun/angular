@@ -6,7 +6,8 @@ import { Location } from '@angular/common';
 
 @Component({
   selector: 'hero-detail',
-  templateUrl: './heroes-get.component.html'
+  templateUrl: './heroes-get.component.html',
+  styleUrls: ['./heroes-get.component.css']
 })
 export class HeroesGetComponent {
   @Input() hero: Hero;

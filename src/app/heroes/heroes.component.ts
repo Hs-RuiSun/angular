@@ -2,6 +2,7 @@
 import { HeroService } from '../hero.service';
 import { Hero } from './hero.model';
 import { Component } from '@angular/core';
+import { Routes } from "@angular/router";
 
 
 @Component({
@@ -9,6 +10,7 @@ import { Component } from '@angular/core';
   templateUrl: './heroes.component.html',
   styleUrls: ['./heroes.component.css']
 })
+
 export class HeroesComponent {
   heroes: Hero[];
 
