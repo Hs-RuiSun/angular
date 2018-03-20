@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
+import { FormsModule } from '@angular/forms';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -11,7 +13,7 @@ import { HeroesComponent } from './heroes/heroes.component';
 import { ConfigComponent } from './http/config.component';
 import { ConfigService } from './http/config.service';
 import { InMemoryDataService } from './in-memory-data.service';
-import { HttpModule } from '@angular/http';
+
 
 
 @NgModule({
@@ -23,6 +25,7 @@ import { HttpModule } from '@angular/http';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     HttpModule,
     HttpClientModule,

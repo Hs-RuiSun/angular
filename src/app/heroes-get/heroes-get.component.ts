@@ -1,18 +1,20 @@
 import { HeroService } from '../hero.service';
 import { Hero } from '../heroes/hero.model';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'hero-detail',
   templateUrl: './heroes-get.component.html'
 })
 export class HeroesGetComponent {
-  hero: Hero;
+  @Input() hero: Hero;
 
   constructor(
     private route: ActivatedRoute,
-    private heroService: HeroService
+    private heroService: HeroService,
+    private location: Location
   ) {}
 
   ngOnInit() {
@@ -23,5 +25,14 @@ export class HeroesGetComponent {
     const id = +this.route.snapshot.paramMap.get('id');
   return this.heroService.getHero(id)
     .subscribe(hero => this.hero = hero);
+  }
+
+  goBack() {
+  this.location.back();
+  }
+
+  save() {
+  this.heroService.updateHero(this.hero)
+    .subscribe(() => this.goBack());
   }
 }
