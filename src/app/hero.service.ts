@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
-import { catchError, map, tap } from 'rxjs/operators';
+import { catchError, tap } from 'rxjs/operators';
 
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
@@ -63,6 +63,18 @@ export class HeroService {
       catchError(this.handleError<Hero>('deleteHero'))
     );
   }
+  
+  searchHeroes(name: string): Observable<Hero[]> {
+    if(!name || !name.trim()) {
+    return of([]);
+    }
+    console.log(this.heroesUrl + `?name=${name}`);
+    return this.http.get(this.heroesUrl + `?name=${name}`).pipe(
+      tap(_ => this.log("serach hero by name `${name}`")),
+      catchError(this.handleError<Hero>('seach Hero'))
+    );
+  }
+  
     /**
    * Handle Http operation that failed.
    * Let the app continue.

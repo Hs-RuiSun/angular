@@ -6,13 +6,17 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
-import { HeroService } from './hero.service';
+import { DashboardComponent } from "./dashboard/dashboard.component";
 import { HeroesGetComponent } from './heroes-get/heroes-get.component';
 import { HeroesComponent } from './heroes/heroes.component';
 import { ConfigComponent } from './http/config.component';
+import { HeroesSearchComponent } from "./heroes-search/heroes-search.component";
+
 import { ConfigService } from './http/config.service';
 import { InMemoryDataService } from './in-memory-data.service';
+import { HeroService } from './hero.service';
 
 
 
@@ -21,6 +25,8 @@ import { InMemoryDataService } from './in-memory-data.service';
     AppComponent,
     HeroesComponent,
     HeroesGetComponent,
+    DashboardComponent,
+    HeroesSearchComponent,
     ConfigComponent
   ],
   imports: [
