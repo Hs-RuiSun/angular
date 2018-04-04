@@ -4,21 +4,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-
 import { AppRoutingModule } from './app-routing.module';
-
 import { AppComponent } from './app.component';
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { HeroesGetComponent } from './heroes-get/heroes-get.component';
 import { HeroesComponent } from './heroes/heroes.component';
-import { ConfigComponent } from './http/config.component';
 import { HeroesSearchComponent } from "./heroes-search/heroes-search.component";
-
-import { ConfigService } from './http/config.service';
 import { InMemoryDataService } from './in-memory-data.service';
 import { HeroService } from './hero.service';
-
-
+import { PostComponent } from "./http/post.component";
 
 @NgModule({
   declarations: [
@@ -27,7 +21,7 @@ import { HeroService } from './hero.service';
     HeroesGetComponent,
     DashboardComponent,
     HeroesSearchComponent,
-    ConfigComponent
+    PostComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +31,7 @@ import { HeroService } from './hero.service';
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {dataEncapsulation: false, passThruUnknownUrl: false, apiBase: 'api/'})
   ],
-  providers: [HeroService, ConfigService, InMemoryDataService],
+  providers: [HeroService, InMemoryDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
