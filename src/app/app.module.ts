@@ -15,10 +15,12 @@ import { HeroesSearchComponent } from "./heroes/heroes-search.component";
 import { InMemoryDataService } from './in-memory-data.service';
 import { HeroService } from './hero.service';
 import { PostComponent } from "./http/post.component";
-import { InteractionChildComponent } from "./template-syntax/interaction-child.component";
-import { InteractionSetterComponent } from "./template-syntax/interaction-setter.component";
-import { InteractionVoterComponent } from "./template-syntax/interaction-voter.component";
-import { InteractionComponent } from "./template-syntax/interaction.component";
+import { LifeCycleComponent } from "./lifecycle/lifecycle-component";
+import { InteractionChildComponent } from "./component/interaction-child.component";
+import { InteractionSetterComponent } from "./component/interaction-setter.component";
+import { InteractionVoterComponent } from "./component/interaction-voter.component";
+import { InteractionComponent } from "./component/interaction.component";
+import { LogDirective } from "./component/log.directive";
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { InteractionComponent } from "./template-syntax/interaction.component";
     InteractionChildComponent,
     InteractionComponent,
     InteractionSetterComponent,
-    InteractionVoterComponent
+    InteractionVoterComponent,
+    LifeCycleComponent,
+    LogDirective
   ],
   imports: [
     BrowserModule,

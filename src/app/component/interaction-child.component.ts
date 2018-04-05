@@ -1,5 +1,5 @@
 import { Hero } from "../heroes/hero.model";
-import { Component, Input } from "@angular/core";
+import { Component, Input, SimpleChanges } from "@angular/core";
 @Component({
   selector: 'app-interaction-child',
   template: `
@@ -11,4 +11,12 @@ import { Component, Input } from "@angular/core";
 export class InteractionChildComponent {
   @Input() hero: Hero;
   @Input() master: string;
+  
+  ngOnChanges(changes: SimpleChanges) {
+    console.log('OnChanges');
+  }
+   
+  ngOnInit() {
+    console.log('OnInit');
+  }
 }
