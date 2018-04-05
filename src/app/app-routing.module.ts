@@ -1,5 +1,5 @@
-import { DashboardComponent } from "./dashboard/dashboard.component";
-import { HeroesGetComponent } from './heroes-get/heroes-get.component';
+import { DashboardComponent } from "./heroes/dashboard.component";
+import { HeroesGetComponent } from './heroes/heroes-get.component';
 import {NgModule} from '@angular/core';
 import { HeroesComponent } from './heroes/heroes.component';
 import { Routes, RouterModule } from '@angular/router';

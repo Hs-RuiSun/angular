@@ -1,5 +1,5 @@
 import { HeroService } from "../hero.service";
-import { Hero } from "../heroes/hero.model";
+import { Hero } from "./hero.model";
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { Observable, Subject } from "rxjs";
