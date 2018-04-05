@@ -4,7 +4,16 @@
     <li *ngFor="let user of users; let i=index">{{i}}, {{user.username}}</li>
   </ul>
 </div>
+
 <div>
+<label>get user input</label><br>
+<input #input_reference (keyup)="0"/> <p>{{input_reference.value}}</p>
+<input #input_value (keyup)="onKey(input_value.value)" /> <p>{{value}}</p>
+<input (keyup)="onKeyUp($event)"/> <p>{{inputValue}}</p>
+<input #input_enter (keyup.enter)="0" /> <p>{{input_enter.value}}</p>
+</div>
+
+<!--  <div>
   <form (ngSubmit)="onSubmit()" #signupForm="ngForm">
     <fieldset>
       <label>username</label>
@@ -44,3 +53,4 @@
   <label>log</label>
   <span *ngFor="let info of logger.infos">{{info}}</span>
 </div>
+-->

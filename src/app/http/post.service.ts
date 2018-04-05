@@ -18,6 +18,11 @@ export class PostService {
     return this.http.request(this.postJsonFile);
   }
   
+  getPostsAny(): Observable<any> {
+    return this.http.get(this.url)
+        .map(response => response.json());
+  }
+  
   getPosts(): Observable<IPost[]> {
     return this.http.get(this.url)
         .map(response => {return <IPost[]>response.json(); });

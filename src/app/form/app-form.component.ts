@@ -16,6 +16,19 @@ export class AppFormComponent {
   users: User[] = [];
   user: User = new User('', '', '', 2);
   
+  /**
+   * get user input
+   */
+  inputValue: string;
+  private value: string
+  onKeyUp(event: any) {
+    this.inputValue = event.target.value;
+  }
+  
+  onKey(value: string) {
+    this.value = this.value + "," + value;
+  }
+  
   constructor(private logger: LoggerService) { }
 
   onSubmit() {

@@ -1,6 +1,7 @@
 import { IPost } from './post.model';
 import { PostService } from './post.service';
 import { Component, OnInit } from '@angular/core';
+import { Observable } from "rxjs";
 
 @Component({
   selector: 'app-post',
@@ -9,14 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostComponent implements OnInit {
   posts: IPost[];
+  postsAny: Observable<any>;
   constructor(private postService: PostService) {}
   
   ngOnInit() {
-    this.getPostsFromJsonFile();
+    this.getPostsAny();
   }
   
   getPostsFromJsonFile() {
   this.postService.getPostsFromJsonFile().subscribe(res => console.log(res));
+  }
+  
+  getPostsAny() {
+    this.postService.getPostsAny().subscribe(posts => this.postsAny=posts);
   }
   
   getPosts() {
