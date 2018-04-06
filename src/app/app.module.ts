@@ -20,7 +20,7 @@ import { InteractionChildComponent } from "./component/interaction-child.compone
 import { InteractionSetterComponent } from "./component/interaction-setter.component";
 import { InteractionVoterComponent } from "./component/interaction-voter.component";
 import { InteractionComponent } from "./component/interaction.component";
-import { LogDirective } from "./component/log.directive";
+import { LogDirective, CountClickDirective } from "./component/log.directive";
 
 @NgModule({
   declarations: [
@@ -37,7 +37,8 @@ import { LogDirective } from "./component/log.directive";
     InteractionSetterComponent,
     InteractionVoterComponent,
     LifeCycleComponent,
-    LogDirective
+    LogDirective,
+    CountClickDirective
   ],
   imports: [
     BrowserModule,

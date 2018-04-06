@@ -13,3 +13,17 @@ export class LogDirective {
     console.log('Element clicked!');
   }
 }
+
+@Directive({
+  selector: 'button[counting]',
+  host: {
+    '(click)': 'onClick($event.target)'
+  }
+})
+export class CountClickDirective {
+  numberOfClicks = 0;
+
+  onClick(btn: any) {
+    console.log("button", btn, "number of clicks:", this.numberOfClicks++);
+  }
+}
