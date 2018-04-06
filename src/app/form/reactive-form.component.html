@@ -1,0 +1,7 @@
+<form [formGroup]="heroForm">
+	<label>Name: 
+		<input formControlName="name"/>
+	</label>
+</form>
+<p>Form value: {{ heroForm.value | json }}</p>
+<p>Form status: {{ heroForm.status | json}}</p>

@@ -8,4 +8,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'app';
   isHidden = false;
+  
+  myEvent(event: any) {
+    console.log(event.target.value);
+  }
 }

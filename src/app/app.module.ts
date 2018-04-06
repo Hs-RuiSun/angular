@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,6 +21,7 @@ import { InteractionSetterComponent } from "./component/interaction-setter.compo
 import { InteractionVoterComponent } from "./component/interaction-voter.component";
 import { InteractionComponent } from "./component/interaction.component";
 import { LogDirective, CountClickDirective } from "./component/log.directive";
+import { ReactiveFormComponent } from "./form/reactive-form.component";
 
 @NgModule({
   declarations: [
@@ -37,12 +38,14 @@ import { LogDirective, CountClickDirective } from "./component/log.directive";
     InteractionSetterComponent,
     InteractionVoterComponent,
     LifeCycleComponent,
+    ReactiveFormComponent,
     LogDirective,
     CountClickDirective
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     HttpModule,
     HttpClientModule,
